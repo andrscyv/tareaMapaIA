@@ -1,4 +1,11 @@
-(SETQ GRAFO '((12 5 7 1 2 3 4) (2 2 3 A) (4 7 15 C D E) (7 1 8 21 32 43) (8 4 6)))
+;(SETQ GRAFO '((12 5 7 1 2 3 4) (2 2 3 A) (4 7 15 C D E) (7 1 8 21 32 43) (8 4 6)))
+
+;(SETQ GRAFO '((1 1 6 3) (2 1 3 3) (3 2 5 1 2 5) (4 5 6 5) (5 4 4 3 4 6 7) 
+;	(6 3 2 5 7) (7 5 3 5 6 8 10) (8 5 1 7 9 10) (9 6 1 8 10) (10 6 2 7 8 9)))
+(setq grafo '( (1 1 1 2 3 21) (2 1 3 1 3 4) (3 5 2 1 2 4 ) (4 4 4 2 3 21 5 6)
+	(5 2 6 4 6 7) (6 5 6 4 5 7 12) (7 3 8 5 6 8 9) (8 2 9 7) (9 5 10 7 10) (10 6 9 9 11) (11 7 10 10 12)
+	(12 7 7 6 11 13) (13 8 6 12 14 15) (14 8 4 13 19) (15 10 7 13 16 18 19) (16 10 9 15 17) (17 13 10 16 18)
+	(18 13 6 17 15) (19 11 4 14 15 20) (20 13 1 19) (21 8 2 1 4)))
 
 ;;BUSCA UN NODO EN UNA LISTA CON BASE EN SU IDNODO
 ;;REGRESA nil CUANDO NO ENCUENTRA AL NODO
@@ -109,13 +116,28 @@
 ;(print (sigAbiertoNoCerrado))
 (defun procesaHijo (idini idfin idhijo acum)
 	(setq prioHijo (+ acum (costo idini idhijo) (costo idhijo idfin) ))
-	(insertaPrioridadAbto (list idhijo idini prioHijo (+acum (costo idini idhijo)))))
+	(insertaPrioridadAbto (list idhijo idini prioHijo (+ acum (costo idini idhijo)))))
 
 (defun aEstrella (nodoini idfin acum)
-	(loop for x in (DAMEHIJOS (car ini))
-      do (print x) ))
+	(loop for x in (DAMEHIJOS (car nodoini))
+      do (procesaHijo (car nodoini) idfin x acum) )
+	(push nodoini crrdo)
+	(setq sigEstrella (sigAbiertoNoCerrado))
+	(if (not (= (car sigEstrella) idfin)) (aEstrella sigEstrella idfin (cadddr sigEstrella)) (construyeSol sigEstrella) ))
 
-(aEstrella ())
+(setq sol '())
+(defun construyeSol (nodofin)
+	(cond
+		((null (cadr nodofin)) (push nodofin sol))
+		(T (push nodofin sol) (setq nodofin (ENCUENTRANODO (cadr nodofin) crrdo)) (construyeSol nodofin) )))
+
+(print 'resultado)
+(aEstrella '(8 nil 0 0) 17 0)
+(print sol)
+(print 'abto)
+(print abto)
+(print 'crrdo)
+(print crrdo)
 
 
 
