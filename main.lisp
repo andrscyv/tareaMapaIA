@@ -1,3 +1,11 @@
+#! /usr/local/bin/clisp
+;(print *args*)
+(setq idiniG (parse-integer (car *args*)))
+;(print idiniG)
+(setq idfinG (parse-integer (cadr *args*)))
+;(print (= idiniG 0.2))
+(setq abto '())
+(setq crrdo '())
 ;(SETQ GRAFO '((12 5 7 1 2 3 4) (2 2 3 A) (4 7 15 C D E) (7 1 8 21 32 43) (8 4 6)))
 
 ;(SETQ GRAFO '((1 1 6 3) (2 1 3 3) (3 2 5 1 2 5) (4 5 6 5) (5 4 4 3 4 6 7) 
@@ -60,11 +68,11 @@
 ;;=============================================
 
 
-(setq abto '())
+
 (setq p '(( nil nil 1) (nil nil 3) (nil nil 3) (nil nil 7) (nil nil 9)) )
 (setq p2 '( (1) (4)  (6)  (12)  (2)))
 (setq p3 '( (1) (4) (5) (6) (7) (12)  (2)))
-(setq crrdo '())
+
 
 ;;Si n > lenght lst => regresa toda la lista
 (defun primerosn (n lst)
@@ -131,13 +139,15 @@
 		((null (cadr nodofin)) (push nodofin sol))
 		(T (push nodofin sol) (setq nodofin (ENCUENTRANODO (cadr nodofin) crrdo)) (construyeSol nodofin) )))
 
-(print 'resultado)
-(aEstrella '(8 nil 0 0) 17 0)
+;(print 'resultado)
+(setq nodoIniG `(,idiniG nil 0 0))
+;(print nodoIniG)
+(aEstrella nodoIniG idfinG 0)
 (print sol)
-(print 'abto)
-(print abto)
-(print 'crrdo)
-(print crrdo)
+;(print 'abto)
+;(print abto)
+;(print 'crrdo)
+;(print crrdo)
 
 
 
