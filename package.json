@@ -1,0 +1,23 @@
+{
+  "name": "tareamapa",
+  "version": "1.0.0",
+  "description": "Interfas de main.lisp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrscyv/tareaMapaIA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrscyv/tareaMapaIA/issues"
+  },
+  "homepage": "https://github.com/andrscyv/tareaMapaIA#readme",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "express": "^4.16.3"
+  }
+}
