@@ -30,7 +30,7 @@ function setFin(){
 }
 function pinta(arr){
 	for (i = 0; i < arr.length; i++) { 
-    document.getElementById(arr[i]).style.backgroundColor = "#33cc33";
+    document.getElementById(arr[i]).style.backgroundColor = "#cc0000";
 }
 }
 
@@ -45,4 +45,13 @@ function calculaCamino(){
 	  xhttp.open("GET", "http://localhost:8080/?ini="+ini+"&fin="+fin, true);
 	  xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
 	  xhttp.send();
+}
+
+function limpia(){
+	for(var i=0;i<89;i++){
+		if(bandsBtns[i]){
+			document.getElementById(i).style.backgroundColor = "#666699";
+			bandsBtns[i]=false;
+		}
+	}
 }
