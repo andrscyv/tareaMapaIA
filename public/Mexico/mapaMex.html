@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mapa</title>    
+    <link rel="stylesheet" type="text/css" href="estiloMex.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script  type="text/javascript" src="mapController.js"></script>
+  </head>
+  <body>
+    <div class="instrucc">
+      <h1>Instrucciones: </h1>
+      <p>Selecciona primero la ciudad de inicio. Selecciona las ciudades por las que quieres pasar en orden. Por último, selecciona la ciudad meta. </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9 mapa" style="height: 431px; width: 640px; margin-top: -6px; margin-left: 268px;">
+
+        </div>
+        <div class="col-md-3">
+            <div class="botones">
+                <!-- <button class="botoncito btn btn-info" style="white-space: normal;" onclick="setIni()"> Seleccionar inicio </button>
+                <div class="separa"></div>
+                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="setFin()"> Seleccionar fin </button>
+                <div class="separa"></div>
+                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="calculaCamino()"> Calcular camino </button>
+                <div class="separa"></div>
+                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="limpia()"> Limpiar camino </button> -->
+
+                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="calculaCamino2()"> Calcular camino </button>
+                <div class="separa"></div>
+                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="limpia()"> Limpiar camino </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <button class="miBtn" id="1" style="position: absolute; left:  330px; top: 130px;" onclick="cambiaColor(1)"></button>
+        <button class="miBtn" id="2" style="position: absolute; left:  387px; top: 145px;" onclick="cambiaColor(2)"></button>
+        <button class="miBtn" id="3" style="position: absolute; left:  420px; top: 165px;" onclick="cambiaColor(3)"></button>
+        <button class="miBtn" id="4" style="position: absolute; left:  467px; top: 185px;" onclick="cambiaColor(4)"></button>
+        <button class="miBtn" id="5" style="position: absolute; left:  500px; top: 156px;" onclick="cambiaColor(5)"></button>
+        <button class="miBtn" id="6" style="position: absolute; left:  540px; top: 198px;" onclick="cambiaColor(6)"></button>
+        <button class="miBtn" id="7" style="position: absolute; left:  578px; top: 226px;" onclick="cambiaColor(7)"></button>
+        <button class="miBtn" id="8" style="position: absolute; left:  605px; top: 204px;" onclick="cambiaColor(8)"></button>
+        <button class="miBtn" id="9" style="position: absolute; left:  642px; top: 253px;" onclick="cambiaColor(9)"></button>
+
+        <button class="miBtn" id="10" style="position: absolute; left:  690px; top: 287px;" onclick="cambiaColor(10)"></button>
+        <button class="miBtn" id="11" style="position: absolute; left:  647px; top: 303px;" onclick="cambiaColor(11)"></button>
+        <button class="miBtn" id="12" style="position: absolute; left:  606px; top: 265px;" onclick="cambiaColor(12)"></button>
+        <button class="miBtn" id="13" style="position: absolute; left:  555px; top: 249px;" onclick="cambiaColor(13)"></button>        
+        <button class="miBtn" id="14" style="position: absolute; left:  511px; top: 220px;" onclick="cambiaColor(14)"></button>
+        <button class="miBtn" id="15" style="position: absolute; left:  480px; top: 238px;" onclick="cambiaColor(15)"></button>
+        <button class="miBtn" id="16" style="position: absolute; left:  444px; top: 215px;" onclick="cambiaColor(16)"></button>
+        <button class="miBtn" id="17" style="position: absolute; left:  351px; top: 185px;" onclick="cambiaColor(17)"></button>
+        <button class="miBtn" id="18" style="position: absolute; left:  391px; top: 254px;" onclick="cambiaColor(18)"></button>
+        <button class="miBtn" id="19" style="position: absolute; left:  461px; top: 281px;" onclick="cambiaColor(19)"></button>
+        
+        <button class="miBtn" id="20" style="position: absolute; left:  506px; top: 279px;" onclick="cambiaColor(20)"></button>
+        <button class="miBtn" id="21" style="position: absolute; left:  567px; top: 278px;" onclick="cambiaColor(21)"></button>
+        <button class="miBtn" id="22" style="position: absolute; left:  598px; top: 308px;" onclick="cambiaColor(22)"></button>
+        <button class="miBtn" id="23" style="position: absolute; left:  626px; top: 328px;" onclick="cambiaColor(23)"></button>
+        <button class="miBtn" id="24" style="position: absolute; left:  672px; top: 325px;" onclick="cambiaColor(24)"></button>
+        <button class="miBtn" id="25" style="position: absolute; left:  685px; top: 377px;" onclick="cambiaColor(25)"></button>
+        <button class="miBtn" id="26" style="position: absolute; left:  645px; top: 365px;" onclick="cambiaColor(26)"></button>
+        <button class="miBtn" id="27" style="position: absolute; left:  600px; top: 346px;" onclick="cambiaColor(27)"></button>
+        <button class="miBtn" id="28" style="position: absolute; left:  547px; top: 330px;" onclick="cambiaColor(28)"></button>
+        <button class="miBtn" id="29" style="position: absolute; left:  500px; top: 315px;" onclick="cambiaColor(29)"></button>
+        
+        <button class="miBtn" id="30" style="position: absolute; left:  400px; top: 300px;" onclick="cambiaColor(30)"></button>
+        <button class="miBtn" id="31" style="position: absolute; left:  440px; top: 335px;" onclick="cambiaColor(31)"></button>
+        <button class="miBtn" id="32" style="position: absolute; left:  526px; top: 348px;" onclick="cambiaColor(32)"></button>
+        <button class="miBtn" id="33" style="position: absolute; left:  544px; top: 368px;" onclick="cambiaColor(33)"></button>
+        <button class="miBtn" id="34" style="position: absolute; left:  583px; top: 379px;" onclick="cambiaColor(34)"></button>
+        <button class="miBtn" id="35" style="position: absolute; left:  619px; top: 392px;" onclick="cambiaColor(35)"></button>
+        <button class="miBtn" id="36" style="position: absolute; left:  642px; top: 406px;" onclick="cambiaColor(36)"></button>
+        <button class="miBtn" id="37" style="position: absolute; left:  678px; top: 406px;" onclick="cambiaColor(37)"></button>
+        <button class="miBtn" id="38" style="position: absolute; left:  713px; top: 418px;" onclick="cambiaColor(38)"></button>
+        <button class="miBtn" id="39" style="position: absolute; left:  745px; top: 452px;" onclick="cambiaColor(39)"></button>
+        
+        <button class="miBtn" id="40" style="position: absolute; left:  782px; top: 454px;" onclick="cambiaColor(40)"></button>
+        <button class="miBtn" id="41" style="position: absolute; left:  839px; top: 435px;" onclick="cambiaColor(41)"></button>  
+        <button class="miBtn" id="42" style="position: absolute; left:  857px; top: 384px;" onclick="cambiaColor(42)"></button>
+        <button class="miBtn" id="43" style="position: absolute; left:  915px; top: 372px;" onclick="cambiaColor(43)"></button>
+        <button class="miBtn" id="44" style="position: absolute; left:  907px; top: 417px;" onclick="cambiaColor(44)"></button>
+        <button class="miBtn" id="45" style="position: absolute; left:  884px; top: 440px;" onclick="cambiaColor(45)"></button>
+        <button class="miBtn" id="46" style="position: absolute; left:  835px; top: 458px;" onclick="cambiaColor(46)"></button>
+        <button class="miBtn" id="47" style="position: absolute; left:  806px; top: 467px;" onclick="cambiaColor(47)"></button>
+        <button class="miBtn" id="48" style="position: absolute; left:  761px; top: 474px;" onclick="cambiaColor(48)"></button>
+        <button class="miBtn" id="49" style="position: absolute; left:  706px; top: 448px;" onclick="cambiaColor(49)"></button>
+
+        <button class="miBtn" id="50" style="position: absolute; left:  688px; top: 427px;" onclick="cambiaColor(50)"></button>
+        <button class="miBtn" id="51" style="position: absolute; left:  664px; top: 428px;" onclick="cambiaColor(51)"></button>
+        <button class="miBtn" id="52" style="position: absolute; left:  640px; top: 444px;" onclick="cambiaColor(52)"></button>
+        <button class="miBtn" id="53" style="position: absolute; left:  602px; top: 415px;" onclick="cambiaColor(53)"></button>
+        <button class="miBtn" id="54" style="position: absolute; left:  566px; top: 395px;" onclick="cambiaColor(54)"></button>
+        <button class="miBtn" id="55" style="position: absolute; left:  534px; top: 410px;" onclick="cambiaColor(55)"></button>
+        <button class="miBtn" id="56" style="position: absolute; left:  563px; top: 436px;" onclick="cambiaColor(56)"></button>
+        <button class="miBtn" id="57" style="position: absolute; left:  594px; top: 452px;" onclick="cambiaColor(57)"></button>
+        <button class="miBtn" id="58" style="position: absolute; left:  621px; top: 464px;" onclick="cambiaColor(58)"></button>
+        <button class="miBtn" id="59" style="position: absolute; left:  664px; top: 461px;" onclick="cambiaColor(59)"></button>
+        
+        <button class="miBtn" id="60" style="position: absolute; left:  691px; top: 468px;" onclick="cambiaColor(60)"></button>
+        <button class="miBtn" id="61" style="position: absolute; left:  727px; top: 464px;" onclick="cambiaColor(61)"></button>
+        <button class="miBtn" id="62" style="position: absolute; left:  676px; top: 485px;" onclick="cambiaColor(62)"></button>
+        <button class="miBtn" id="63" style="position: absolute; left:  703px; top: 496px;" onclick="cambiaColor(63)"></button>
+        <button class="miBtn" id="64" style="position: absolute; left:  741px; top: 495px;" onclick="cambiaColor(64)"></button>
+        <button class="miBtn" id="65" style="position: absolute; left:  789px; top: 496px;" onclick="cambiaColor(65)"></button>
+        <button class="miBtn" id="66" style="position: absolute; left:  814px; top: 520px;" onclick="cambiaColor(66)"></button>
+        <button class="miBtn" id="67" style="position: absolute; left:  820px; top: 494px;" onclick="cambiaColor(67)"></button>
+        <button class="miBtn" id="68" style="position: absolute; left:  844px; top: 486px;" onclick="cambiaColor(68)"></button>
+        <button class="miBtn" id="69" style="position: absolute; left:  860px; top: 446px;" onclick="cambiaColor(69)"></button>
+        
+        <button class="miBtn" id="70" style="position: absolute; left:  862px; top: 412px;" onclick="cambiaColor(70)"></button>
+        <button class="miBtn" id="71" style="position: absolute; left:  887px; top: 371px;" onclick="cambiaColor(71)"></button>
+        <button class="miBtn" id="72" style="position: absolute; left:  885px; top: 403px;" onclick="cambiaColor(72)"></button>
+        <button class="miBtn" id="73" style="position: absolute; left:  810px; top: 443px;" onclick="cambiaColor(73)"></button>
+        <button class="miBtn" id="74" style="position: absolute; left:  644px; top: 477px;" onclick="cambiaColor(74)"></button>
+        <button class="miBtn" id="75" style="position: absolute; left:  627px; top: 429px;" onclick="cambiaColor(75)"></button>
+        <button class="miBtn" id="76" style="position: absolute; left:  611px; top: 366px;" onclick="cambiaColor(76)"></button>
+        <button class="miBtn" id="77" style="position: absolute; left:  577px; top: 424px;" onclick="cambiaColor(77)"></button>
+        <button class="miBtn" id="78" style="position: absolute; left:  650px; top: 343px;" onclick="cambiaColor(78)"></button>
+        <button class="miBtn" id="79" style="position: absolute; left:  686px; top: 354px;" onclick="cambiaColor(79)"></button>
+        
+        <button class="miBtn" id="80" style="position: absolute; left:  534px; top: 299px;" onclick="cambiaColor(80)"></button>
+        <button class="miBtn" id="81" style="position: absolute; left:  629px; top: 225px;" onclick="cambiaColor(81)"></button>
+        <button class="miBtn" id="82" style="position: absolute; left:  666px; top: 279px;" onclick="cambiaColor(82)"></button>
+        <button class="miBtn" id="83" style="position: absolute; left:  587px; top: 297px;" onclick="cambiaColor(83)"></button>
+        <button class="miBtn" id="84" style="position: absolute; left:  522px; top: 250px;" onclick="cambiaColor(84)"></button>
+        <button class="miBtn" id="85" style="position: absolute; left:  446px; top: 249px;" onclick="cambiaColor(85)"></button>
+        <button class="miBtn" id="86" style="position: absolute; left:  406px; top: 201px;" onclick="cambiaColor(86)"></button>
+        <button class="miBtn" id="87" style="position: absolute; left:  359px; top: 238px;" onclick="cambiaColor(87)"></button>
+        <button class="miBtn" id="88" style="position: absolute; left:  381px; top: 221px;" onclick="cambiaColor(88)"></button>
+        <button class="miBtn" id="89" style="position: absolute; left:  350px; top: 157px;" onclick="cambiaColor(89)"></button> 
+          
+     </div>       
+      
+
+    
+        
+    </div>    
+    
+  </body>
+</html>

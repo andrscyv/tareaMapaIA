@@ -9,14 +9,21 @@ function formateaLista(lst){
 	return arr
 }
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/', function(req, res){
 	idIni = req.query.ini
 	idFin = req.query.fin
 	r = {"status" : null, "camino":null}
 
-	exec('./main.lisp '+idIni+' '+ idFin, (err, stdout, stderr) => {
+	// exec('./main.lisp '+idIni+' '+ idFin, (err, stdout, stderr) => {
+  exec('clisp ./main.lisp '+idIni+' '+ idFin, (err, stdout, stderr) => {
   if (err) {
-  	r.status = "error"
+  	r.status = err.message
     res.send(r)
     return;
   }

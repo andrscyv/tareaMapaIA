@@ -1,0 +1,60 @@
+.instrucc{
+	color: #856404;
+	background-color: #fff3cd;
+	border-color: #ffeeba;
+	position: relative;
+	padding: 2px 10px 2px 15px;
+	margin-bottom: 1rem;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+}
+
+.cd1{
+	position: absolute;
+	left: 20em;	top: 20em;
+}
+
+.miBtn {
+    background-color: #0066cc;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+    height:14px;
+    width:14px;
+}
+
+.mapa{
+	background-image: url("mexico.png");
+	height: 431px;
+	width: 640px;
+	margin: 10px;
+	display: block;
+    margin-left: 300px;
+    margin-right: auto;
+}
+
+.row{
+	padding-top: 8px;
+	padding-left: 45px;
+}
+
+.botones{
+	display: table-caption;
+	height: 300px;
+}
+
+.separa{
+	height: 30px;
+}
+
+.botoncito{
+	width: 100px;
+    white-space: normal;
+
+}
