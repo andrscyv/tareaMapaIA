@@ -9,19 +9,23 @@ var bandsBtns = [false, false, false, false, false, false, false, false, false, 
 		 false, false, false, false, false, false, false, false, false, false, false, false];
 
 var lugares = [];
+var stringLug;
 
 function cambiaColor(id){
 	if(bandsBtns[id - 1] == false){
 		document.getElementById(id).style.backgroundColor = "#cc0000";
 		bandsBtns[id - 1] = true;
 		lugares.push(id);
+		stringLug = lugares.toString();
+		
 	}else{
 		// document.getElementById(id).style.backgroundColor = "#4545cc";
 		document.getElementById(id).style.backgroundColor = "#0066cc";
 		bandsBtns[id - 1] = false;
 		lugares.pop();
+		stringLug = lugares.toString();
 	}
-	console.log(lugares);
+	document.getElementById("arrC").innerHTML = stringLug;
 	actual = id
 }
 
@@ -70,7 +74,8 @@ function limpia(){
 	while(lugares.length != 0){
 		lugares.pop();
 	}
-	console.log(lugares);
+	stringLug = lugares.toString();
+	document.getElementById("arrC").innerHTML = stringLug;
 	for(var i=0;i<89;i++){
 		if(bandsBtns[i] == true){
 			document.getElementById(i+1).style.backgroundColor = "#0066cc";
