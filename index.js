@@ -32,6 +32,7 @@ app.get('/', function(req, res){
   //console.log(stdout);
   r.status = "exito"
   r.camino = formateaLista(stdout)
+  //console.log(r)
   res.send(r)
   //console.log(`stderr: ${stderr}`);
 });
