@@ -10,32 +10,50 @@
   <body>
     <div class="instrucc">
       <h1>Instrucciones: </h1>
-      <p>Selecciona primero la ciudad de inicio. Selecciona en orden las ciudades por las que quieres pasar. Por último, selecciona la ciudad meta. </p>
+      <p>Seleccione las ciudades para hacer su recorrido y oprima la opción "Calcular camino". Oprima "Calcular distancia" y "Calcular tiempo" para saber más acerca del viaje. Por último, seleccione "Limpiar camino" para empezar de nuevo. </p>
     </div>
-
+    <!-- <div style="height: 10px;"></div> -->
     <div class="row">
         <div class="col-md-9 mapa" style="height: 431px; width: 640px; margin-top: -6px; margin-left: 268px;">
 
         </div>
         <div class="col-md-3">
-            <div class="botones">
-                <!-- <button class="botoncito btn btn-info" style="white-space: normal;" onclick="setIni()"> Seleccionar inicio </button>
-                <div class="separa"></div>
-                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="setFin()"> Seleccionar fin </button>
-                <div class="separa"></div>
-                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="calculaCamino()"> Calcular camino </button>
-                <div class="separa"></div>
-                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="limpia()"> Limpiar camino </button> -->
-
-                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="calculaCamino2()"> Calcular camino </button>
-                <div class="separa"></div>
-                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="limpia()"> Limpiar camino </button>
-            </div>
-            <div class="ciudades">
+            
+                <div class="ciudades">
                 <h3>Ciudades Seleccionadas: </h3>
                 <p id="arrC"></p>
             </div>
+            <div style="display: flex; width: 500px;">
+            <div class="botones">
+
+                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="calculaCamino2()"> Calcular camino </button>
+                <div class="separa"></div>
+                
+                <button id="escondeD" class="botoncito btn btn-info" style="white-space: normal;" onclick="calculaDist()"> Calcular distancia </button>
+                <div class="separa"></div>
+                <p id="dist"></p>
+                <button id="escondeT" class="botoncito btn btn-info" style="white-space: normal;" onclick="muestraT()"> Calcula tiempo </button>
+                <div class="separa"></div>
+                
+                <div id="escondeT2">
+                    Ingrese la velocidad (km/h): <br>
+                    <input type="text   " name="Vel" min="1" id="vel"> 
+                    <button onclick="calculaT()"> Enter </button>
+                </div>
+                    
+                
+                <div class="separa"></div>
+                <div class="separa2" id="escondeT2"></div>
+                <p id="tiempo"></p>
+            </div>
+             <div class="botones">
+                <button class="botoncito btn btn-info" style="white-space: normal;" onclick="limpia()"> Limpiar camino </button>
+                <div class="separa"></div>
+            </div>           
         </div>
+        
+            </div>
+            
     </div>
 
     <div class="">

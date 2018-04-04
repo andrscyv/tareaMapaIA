@@ -51,10 +51,28 @@
 .botones{
 	display: table-caption;
 	height: 200px;
+	width: 300px;
 }
 
 .separa{
 	height: 30px;
+}
+
+.separa2{
+	display: none;
+	height: 30px;
+}
+
+#escondeT{
+	display: none;
+}
+
+#escondeT2{
+	display: none;
+}
+
+#escondeD{
+	display: none;
 }
 
 .botoncito{
